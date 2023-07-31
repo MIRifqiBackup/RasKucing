@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/utamaFragment">
+
+    <fragment
+        android:id="@+id/utamaFragment"
+        android:name="com.miftakhulilmanrifqi82.navigation.raskucing.UtamaFragment"
+        android:label="fragment_utama"
+        tools:layout="@layout/fragment_utama" >
+        <action
+            android:id="@+id/action_utamaFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slidemasuk_kanan_ke_kiri"
+            app:exitAnim="@anim/slidekeluar_kanan_ke_kiri" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.miftakhulilmanrifqi82.navigation.raskucing.DetailFragment"
+        android:label="fragment_detail"
+        tools:layout="@layout/fragment_detail" >
+        <action
+            android:id="@+id/action_detailFragment_to_utamaFragment"
+            app:destination="@id/utamaFragment"
+            app:enterAnim="@anim/slidemasuk_kiri_ke_kanan"
+            app:exitAnim="@anim/slidekeluar_kiri_ke_kanan"
+            app:popEnterAnim="@anim/slidemasuk_kanan_ke_kiri"
+            app:popExitAnim="@anim/slidekeluar_kanan_ke_kiri" />
+    </fragment>
+</navigation>
